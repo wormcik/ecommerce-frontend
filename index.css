@@ -1,0 +1,93 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #3a3a3a;
+    color: white;
+    width: 100%;
+    padding: 20px 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+#menuButtons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#adminLink {
+    padding: 12px 25px;
+    background-color: #3f51b5;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#adminLink:hover {
+    background-color: #303f9f;
+}
+
+#userLink {
+    padding: 12px 25px;
+    background-color: #3f51b5;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#userLink:hover {
+    background-color: #303f9f;
+}
+
+#authButtons {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#loginButton {
+    background-color: #3f51b5;
+    color: white;
+}
+
+#loginButton:hover {
+    background-color: #303f9f;
+}
+
+#logoutButton {
+    background-color: #e91e63;
+    color: white;
+}
+
+#logoutButton:hover {
+    background-color: #c2185b;
+}

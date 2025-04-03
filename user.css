@@ -1,0 +1,242 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #333;
+}
+
+header {
+    background-color: #3a3a3a;
+    color: white;
+    width: 100%;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+#modalItemReviews {
+    margin-top: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-bottom: 10px;
+}
+
+.review {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.review[rating="1"] { background-color: #ff0000; } 
+.review[rating="2"] { background-color: #ff3300; }
+.review[rating="3"] { background-color: #ff6600; }
+.review[rating="4"] { background-color: #ff9900; }
+.review[rating="5"] { background-color: #ffcc00; }
+.review[rating="6"] { background-color: #ccff00; }
+.review[rating="7"] { background-color: #99ff00; }
+.review[rating="8"] { background-color: #66ff00; }
+.review[rating="9"] { background-color: #33ff00; }
+.review[rating="10"] { background-color: #00ff00; } 
+
+.review p {
+    margin: 5px 0;
+}
+
+.review .review-header {
+    font-weight: bold;
+    color: #3f51b5;
+}
+
+.review .review-date {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 5px;
+}
+
+.review .user-review {
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+
+.review.user-review-own {
+    background-color: #e3f2fd; 
+    border-left: 5px solid #3f51b5; 
+}
+
+#ratingInput,
+#reviewInput {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    max-width: 790px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block; 
+}
+
+#ratingInput {
+    margin-bottom: 15px;
+}
+
+.star {
+    font-size: 24px;
+    cursor: pointer;
+    color: gray;
+}
+
+.star.selected {
+    color: gold;
+}
+
+
+#reviewInput {
+    height: 120px;
+    margin-top: 15px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #3f51b5;
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #303f9f;
+}
+
+p#modalItemRating,
+p#modalItemReviewsCount {
+    margin-bottom: 10px;
+}
+
+.category-buttons {
+    margin-top: 20px;
+}
+
+.category-buttons button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 1em;
+}
+
+.category-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.category-container .category-button {
+    margin: 10px;
+    padding: 12px 20px;
+    background-color: #3f51b5;
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-transform: capitalize;
+    text-align: center;
+    width: 150px;
+}
+
+.category-container .category-button:hover {
+    background-color: #303f9f;
+}
+
+.category-container .category-button.active {
+    background-color: #1e2e7f;
+}
+
+#items-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.item-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.item-card:hover {
+    transform: scale(1.05);
+}
+
+.item-card h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #3f51b5;
+}
+
+.item-card p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+.item-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

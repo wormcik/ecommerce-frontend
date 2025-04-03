@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <nav>
+            <ul>
+                <button class="home-button" onclick="goToHomePage()">Home</button>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('items')">Items</button>
+            <button class="tab-button" onclick="showTab('users')">Users</button>
+        </div>
+
+        <div class="tab-content" id="items">
+            <h2>Manage Items</h2>
+            <form id="addItemForm">
+                <label for="name">Item Name:</label>
+                <input type="text" id="name" required>
+            
+                <label for="category">Category:</label>
+                <select id="category" required onchange="updateFormFields()">
+                    <option value="">Choose</option>
+                    <option value="vinyls">Vinyls</option>
+                    <option value="furniture">Antique Furniture</option>
+                    <option value="watches">GPS Sport Watches</option>
+                    <option value="shoes">Running Shoes</option>
+                    <option value="books">Books</option>
+                </select>
+            
+                <label for="description">Description:</label>
+                <textarea id="description" required></textarea>
+            
+                <label for="price">Price:</label>
+                <input type="number" id="price" required>
+            
+                <label for="seller">Seller:</label>
+                <input type="text" id="seller" required>
+            
+                <label for="image">Image URL:</label>
+                <input type="url" id="image" required>
+            
+                <div id="vinylsFields" class="dynamic-field" style="display: none;">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age">
+                </div>
+            
+                <div id="furnitureFields" class="dynamic-field" style="display: none;">
+                    <label for="material">Material:</label>
+                    <input type="text" id="material">
+                </div>
+            
+                <div id="watchesFields" class="dynamic-field" style="display: none;">
+                    <label for="batteryLife">Battery Life (days):</label>
+                    <input type="text" id="batteryLife">
+                </div>
+            
+                <div id="shoesFields" class="dynamic-field" style="display: none;">
+                    <label for="size">Size:</label>
+                    <input type="text" id="size">
+                </div>
+
+                <div id="booksFields" class="dynamic-field" style="display: none;">
+                    <label for="author">Author:</label>
+                    <input type="text" id="author">
+                </div>
+            
+                <button type="submit">Add Item</button>
+            </form>
+            
+            
+
+            <h3>Current Items</h3>
+            <div class="tabsItem">
+                <button class="tabItem-button active" onclick="showTabItem('all')">All Items</button>
+                <button class="tabItem-button" onclick="showTabItem('vinyls')">Vinyls</button>
+                <button class="tabItem-button" onclick="showTabItem('furniture')">Antique Furniture</button>
+                <button class="tabItem-button" onclick="showTabItem('watches')">GPS Sport Watches</button>
+                <button class="tabItem-button" onclick="showTabItem('shoes')">Running Shoes</button>
+                <button class="tabItem-button" onclick="showTabItem('books')">Books</button>
+            </div>
+            
+            <div class="tabItem-content" id="all" style="display: block;">
+                <h3>All Items</h3>
+                <ul id="itemList"></ul>
+            </div>
+            
+            <div class="tabItem-content" id="vinyls" style="display: none;">
+                <h3>Vinyls</h3>
+                <ul id="vinylsList"></ul>
+            </div>
+            
+            <div class="tabItem-content" id="furniture" style="display: none;">
+                <h3>Antique Furniture</h3>
+                <ul id="furnitureList"></ul>
+            </div>
+            
+            <div class="tabItem-content" id="watches" style="display: none;">
+                <h3>GPS Sport Watches</h3>
+                <ul id="watchesList"></ul>
+            </div>
+            
+            <div class="tabItem-content" id="shoes" style="display: none;">
+                <h3>Running Shoes</h3>
+                <ul id="shoesList"></ul>
+            </div>
+
+            <div class="tabItem-content" id="books" style="display: none;">
+                <h3>Books</h3>
+                <ul id="booksList"></ul>
+            </div>
+        </div>
+
+        <div class="tab-content" id="users" style="display: none;">
+            <h2>Manage Users</h2>
+            <form id="addUserForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <select id="role">
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <button type="submit">Add User</button>
+            </form>
+
+            <h3>User List</h3>
+            <ul id="userList"></ul>
+        </div>
+
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

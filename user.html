@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="user.css">
+</head>
+<body>
+    <header>
+        <h1>User Dashboard</h1>
+        <nav>
+            <button class="home-button" onclick="goToHomePage()">Home</button>
+        </nav>
+    </header>
+
+    <div class="category-container">
+        <button class="category-button active" onclick="showTabItem('all')">All Items</button>
+        <button class="category-button" onclick="showTabItem('vinyls')">Vinyls</button>
+        <button class="category-button" onclick="showTabItem('furniture')">Furniture</button>
+        <button class="category-button" onclick="showTabItem('watches')">Watches</button>
+        <button class="category-button" onclick="showTabItem('shoes')">Shoes</button>
+        <button class="category-button" onclick="showTabItem('books')">Books</button>
+    </div>
+
+    <div id="all" class="tabItem-content"></div>
+    <div id="vinyls" class="tabItem-content" style="display:none;"></div>
+    <div id="furniture" class="tabItem-content" style="display:none;"></div>
+    <div id="watches" class="tabItem-content" style="display:none;"></div>
+    <div id="shoes" class="tabItem-content" style="display:none;"></div>
+    <div id="books" class="tabItem-content" style="display:none;"></div>
+
+    <div id="items-container" class="items-grid"></div>
+
+    <div id="itemModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalItemName"></h2>
+            <p id="modalItemDescription"></p>
+            <p id="modalItemPrice"></p>
+            <p id="modalItemSeller"></p>
+            <img id="modalItemImage" width="500" height="auto" alt="Item Image" style="max-width: 100%; height: auto;">
+            <div id="modalItemAdditionalDetails"></div>
+            <p>Average Rating: 
+                <span id="modalItemRating"></span> / 10 
+                <span id="modalItemRatingStars"></span>
+            </p>
+            
+            <p>Reviews: <span id="modalItemReviewsCount"></span></p>
+    
+            <div id="modalItemReviews">
+            </div>
+    
+            <label for="ratingInput">Your Rating</label>
+    
+            <div id="starRatingContainer"></div>
+            <input type="hidden" id="ratingInput">
+
+            <label for="reviewInput">Your Review</label>
+            <textarea id="reviewInput" placeholder="Write your review here..."></textarea>
+    
+            <button onclick="submitRatingAndReview()">Submit Rating and Review</button>
+        </div>
+    </div>
+    
+    </div>
+
+    <script src="user.js"></script>
+</body>
+</html>
